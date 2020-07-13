@@ -17,6 +17,7 @@ public class TaskRecord {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
+  @Column(name="tuser")
   private long user;
   private long program;
   private long task;
@@ -25,7 +26,7 @@ public class TaskRecord {
   private double max;
   private String remarks;
 
-  @Column(length = 65450, columnDefinition = "text")
+  @Column(columnDefinition = "text")
   private String work;
 
   public long getProgram() {
