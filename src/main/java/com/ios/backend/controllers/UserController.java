@@ -24,7 +24,7 @@ public class UserController {
   final String clientUrl = Client.clientUrl;
 
   @GetMapping("/getAllUser")
-  @CrossOrigin(origins = clientUrl)
+//  @CrossOrigin(origins = clientUrl)
   @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
   public ResponseEntity<UserListResource> getAllUser() {
     UserListResource ulr = new UserListResource();
@@ -33,7 +33,7 @@ public class UserController {
   }
   
   @GetMapping("/getAllUser/{pid}")
-  @CrossOrigin(origins = clientUrl)
+//  @CrossOrigin(origins = clientUrl)
   @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
   public ResponseEntity<UserListResource> getAllUser(@PathVariable("pid") Long pid) {
     UserListResource ulr = new UserListResource();
@@ -42,7 +42,7 @@ public class UserController {
   }
 
   @GetMapping("/getUser/{uid}")
-  @CrossOrigin(origins = clientUrl)
+//  @CrossOrigin(origins = clientUrl)
   @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
   public ResponseEntity<UserResource> getUserById(@PathVariable("uid") Long uid) {
     UserResource ur = new UserResource();
