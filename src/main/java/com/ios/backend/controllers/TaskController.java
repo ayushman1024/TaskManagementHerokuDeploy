@@ -34,7 +34,7 @@ public class TaskController {
   private TaskService service;
 
   @PostMapping("/createTask")
-//  @CrossOrigin(origins = clientUrl)
+  @CrossOrigin(origins = clientUrl)
   @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
   public ResponseEntity<Boolean> createTask(@RequestBody NewTaskDTO newTaskDto) {
     Task task = new Task();
@@ -44,7 +44,7 @@ public class TaskController {
   }
 
   @GetMapping("/getAllTaskRecordByUser/{pid}/{uid}")
-//  @CrossOrigin(origins = clientUrl)
+  @CrossOrigin(origins = clientUrl)
   @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
   public ResponseEntity<TaskRecordListResource> getAllTaskRecordByUser(@PathVariable("pid") Long pid, @PathVariable("uid") Long uid) {
     // service call
@@ -53,7 +53,7 @@ public class TaskController {
   }
   
   @GetMapping("/getAllTaskByUser/{pid}/{uid}")
-//  @CrossOrigin(origins = clientUrl)
+  @CrossOrigin(origins = clientUrl)
   @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
   public ResponseEntity<TaskListResource> getAllTaskByUser(@PathVariable("pid") Long pid, @PathVariable("uid") Long uid) {
     // service call
@@ -62,7 +62,7 @@ public class TaskController {
   }
   
   @GetMapping("/getAllTaskRecord")
-//  @CrossOrigin(origins = clientUrl)
+  @CrossOrigin(origins = clientUrl)
   @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
   public ResponseEntity<TaskRecordListResource> getAllTaskRecord() {
     // service call
@@ -71,7 +71,7 @@ public class TaskController {
   }
 
   @GetMapping("/getAllTaskByProgram/{pid}")
-//  @CrossOrigin(origins = clientUrl)
+  @CrossOrigin(origins = clientUrl)
   @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
   public ResponseEntity<TaskListResource> getAllTaskByProgram(@PathVariable("pid") Long pid) {
     // service call
@@ -80,14 +80,14 @@ public class TaskController {
   }
   
   @PostMapping("/updateTaskStatus/{status}")
-//  @CrossOrigin(origins = clientUrl)
+  @CrossOrigin(origins = clientUrl)
   @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
   public ResponseEntity<?> updateTaskStatus(@PathVariable("status") String status) {
     return new ResponseEntity<>(HttpStatus.OK);
   }
   
   @GetMapping("/getTaskCalendar/{pid}/{uid}")
-//  @CrossOrigin(origins = clientUrl)
+  @CrossOrigin(origins = clientUrl)
   @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
   public ResponseEntity<CalendarListResource> getTaskCalendar(@PathVariable("pid") Long pid, @PathVariable("uid") Long uid) {
     // service call
@@ -108,7 +108,7 @@ public class TaskController {
   }
   
   @PostMapping("/addTaskWork/{pid}/{uid}/{tid}")
-//  @CrossOrigin(origins = clientUrl)
+  @CrossOrigin(origins = clientUrl)
   @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
   public ResponseEntity<?> addWork(@PathVariable("pid") Long pid, @PathVariable("uid") Long uid, @PathVariable("tid") Long tid, @RequestBody WorkDTO work) {
     // service call
@@ -117,7 +117,7 @@ public class TaskController {
   }
   
   @GetMapping("/getTaskWork/{pid}/{uid}/{tid}")
-//  @CrossOrigin(origins = clientUrl)
+  @CrossOrigin(origins = clientUrl)
   @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
   public ResponseEntity<WorkDTO> getWork(@PathVariable("pid") Long pid, @PathVariable("uid") Long uid, @PathVariable("tid") Long tid) {
     // service call

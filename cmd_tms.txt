@@ -1,0 +1,4 @@
+heroku git:remote -a aysr-task-management
+git commit -am "commit: spring security basic disable"
+git push heroku master
+heroku pg:killall
